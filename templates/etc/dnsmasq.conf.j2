@@ -632,12 +632,10 @@
 #
 {% if not enable_dnsmasq_dhcp and not enable_tftp and not enable_dnsmasq_dhcp_tftp %}
 address=/{{ pri_domain_name }}/{{ pri_bind_address }}
-auth-sec-servers={{ pri_domain_name }}
 auth-zone={{ pri_domain_name }},{{ pri_network }}/{{ pri_netmask_cidr }}
 bind-interfaces
 bogus-priv
 domain={{ pri_domain_name }}
-except-interface={{ pri_bind_interface }}
 local=/{{ pri_domain_name }}/
 server=/{{ pri_domain_name }}/{{ pri_bind_address }}
 {%   for item in dnsmasq_nameservers %}
@@ -647,7 +645,6 @@ server={{ item }}
 
 {% if enable_dnsmasq_dhcp %}
 address=/{{ pri_domain_name }}/{{ pri_bind_address }}
-auth-sec-servers={{ pri_domain_name }}
 auth-zone={{ pri_domain_name }},{{ pri_network }}/{{ pri_netmask_cidr }}
 bind-interfaces
 bogus-priv
@@ -660,7 +657,6 @@ dhcp-option=option:domain-search,{{ dns_search }}
 dhcp-range={{ item.start }},{{ item.end }},{{ item.netmask }}
 {%   endfor %}
 domain={{ pri_domain_name }}
-except-interface={{ pri_bind_interface }}
 local=/{{ pri_domain_name }}/
 server=/{{ pri_domain_name }}/{{ pri_bind_address }}
 {%   for item in dnsmasq_nameservers %}
@@ -678,7 +674,6 @@ tftp-root={{ tftpboot_dir }}
 
 {% if enable_dnsmasq_dhcp_tftp %}
 address=/{{ pri_domain_name }}/{{ pri_bind_address }}
-auth-sec-servers={{ pri_domain_name }}
 auth-zone={{ pri_domain_name }},{{ pri_network }}/{{ pri_netmask_cidr }}
 bind-interfaces
 bogus-priv
@@ -692,7 +687,6 @@ dhcp-range={{ item.start }},{{ item.end }},{{ item.netmask }}
 {%   endfor %}
 domain={{ pri_domain_name }}
 enable-tftp
-except-interface={{ pri_bind_interface }}
 local=/{{ pri_domain_name }}/
 server=/{{ pri_domain_name }}/{{ pri_bind_address }}
 {%   for item in dnsmasq_nameservers %}
