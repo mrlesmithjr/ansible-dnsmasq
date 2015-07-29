@@ -655,7 +655,7 @@ dhcp-option=option:domain-name,{{ pri_domain_name }}
 {%   if dns_search is defined %}
 dhcp-option=option:domain-search,{{ dns_search }}
 {%   endif %}
-{%   for item in dhcp_range %}
+{%   for item in dhcp_scopes %}
 dhcp-range={{ item.start }},{{ item.end }},{{ item.netmask }}
 {%   endfor %}
 domain={{ pri_domain_name }}
@@ -687,7 +687,7 @@ dhcp-option=option:domain-name,{{ pri_domain_name }}
 {%   if dns_search is defined %}
 dhcp-option=option:domain-search,{{ dns_search }}
 {%   endif %}
-{%   for item in dhcp_range %}
+{%   for item in dhcp_scopes %}
 dhcp-range={{ item.start }},{{ item.end }},{{ item.netmask }}
 {%   endfor %}
 domain={{ pri_domain_name }}

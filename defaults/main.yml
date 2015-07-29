@@ -2,6 +2,13 @@
 # defaults file for ansible-dnsmasq
 config_dnsmasq: false  #defines if DNSMASQ should be configured
 dhcp_boot: 'pxelinux.0,{{ inventory_hostname }},{{ pri_bind_address }}'
+dhcp_scopes:  #define dhcp scopes to be used if dhcp is enabled
+  - start: 192.168.1.128
+    end: 192.168.1.224
+    netmask: 255.255.255.0
+  - start: 192.168.2.128
+    end: 192.168.2.224
+    netmask: 255.255.255.0
 dns_search: example.org  #define your dns search here or define globally in group_vars/all
 dnsmasq_misc_backup_dir: []
 dnsmasq_misc_home: []
