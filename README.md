@@ -16,8 +16,8 @@ config_dnsmasq: false  #defines if DNSMASQ should be configured
 dnsmasq_misc_backup_dir: []
 dnsmasq_misc_home: []
 dnsmasq_nameservers:  #define your dns servers here or define globally in group_vars/all
-  - 1.1.1.1
-  - 2.2.2.2
+  - 8.8.4.4
+  - 8.8.8.8
 enable_dnsmasq_dhcp: false  #defines if DHCP services are provided by DNSMASQ
 enable_dnsmasq_dhcp_tftp: false  #defines if DHCP and TFTP services are provided by DNSMASQ
 enable_tftp: false  #defines if TFTP services are provided by DNSMASQ
