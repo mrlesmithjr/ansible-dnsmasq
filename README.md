@@ -13,6 +13,7 @@ Role Variables
 
 ````
 config_dnsmasq: false  #defines if DNSMASQ should be configured
+dhcp_boot: 'pxelinux.0,{{ inventory_hostname }},{{ pri_bind_address }}'
 dnsmasq_misc_backup_dir: []
 dnsmasq_misc_home: []
 dnsmasq_nameservers:  #define your dns servers here or define globally in group_vars/all
