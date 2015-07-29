@@ -632,7 +632,6 @@
 #
 {% if not enable_dnsmasq_dhcp and not enable_tftp and not enable_dnsmasq_dhcp_tftp %}
 address=/{{ pri_domain_name }}/{{ pri_bind_address }}
-auth-zone={{ pri_domain_name }},{{ pri_network }}/{{ pri_netmask_cidr }}
 bind-interfaces
 bogus-priv
 domain={{ pri_domain_name }}
@@ -645,7 +644,6 @@ server={{ item }}
 
 {% if enable_dnsmasq_dhcp %}
 address=/{{ pri_domain_name }}/{{ pri_bind_address }}
-auth-zone={{ pri_domain_name }},{{ pri_network }}/{{ pri_netmask_cidr }}
 bind-interfaces
 bogus-priv
 dhcp-client-update
@@ -674,7 +672,6 @@ tftp-root={{ tftpboot_dir }}
 
 {% if enable_dnsmasq_dhcp_tftp %}
 address=/{{ pri_domain_name }}/{{ pri_bind_address }}
-auth-zone={{ pri_domain_name }},{{ pri_network }}/{{ pri_netmask_cidr }}
 bind-interfaces
 bogus-priv
 dhcp-boot={{ dhcp_boot }}
