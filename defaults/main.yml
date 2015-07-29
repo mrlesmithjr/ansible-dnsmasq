@@ -15,3 +15,4 @@ pri_domain_name: example.org
 pri_netmask_cidr: 24  #defines netmask cidr value 255.255.255.0 == 24
 pri_network: '{{ ansible_default_ipv4.network }}'
 sync_dnsmasq: false  #defines if DNSMASQ is synced between nodes when using GlusterFS
+tftpboot_dir: /var/lib/tftpboot
