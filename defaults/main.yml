@@ -18,9 +18,9 @@ dnsmasq_nameservers:  #define your dns servers here or define globally in group_
 enable_dnsmasq_dhcp: false  #defines if DHCP services are provided by DNSMASQ
 enable_dnsmasq_dhcp_tftp: false  #defines if DHCP and TFTP services are provided by DNSMASQ
 enable_tftp: false  #defines if TFTP services are provided by DNSMASQ
-ntp_servers:  #defines internal ntp servers for clients to poll
-  - 'ntp1.{{ pri_domain_name }}'
-  - 'ntp2.{{ pri_domain_name }}'
+ntp_servers:  #defines ntp servers for clients to poll
+  - 131.107.13.100
+  - 216.228.192.69
 pri_bind_address: '{{ ansible_default_ipv4.address }}'
 pri_bind_interface: '{{ ansible_default_ipv4.interface }}'
 pri_domain_name: example.org

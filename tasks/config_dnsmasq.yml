@@ -42,3 +42,7 @@
   command: cp {{ dnsmasq_misc_backup_dir }}/dnsmasq.leases {{ dnsmasq_misc_home }}
   run_once: true
   when: dnsmasq_misc_backup_dir is defined and (dnsmasq_misc_leases_stat.stat.exists != true) and config_dnsmasq and sync_dnsmasq and (dnsmasq_misc_backup_leases_stat == true)
+
+- name: config_dnsmasq | creating tftpboot_dir
+  file: path={{ tftpboot_dir }} state=directory
+  when: (enable_tftp is defined and enable_tftp) or (enable_dnsmasq_dhcp_tftp is defined and enable_dnsmasq_dhcp_tftp)

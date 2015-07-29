@@ -649,7 +649,7 @@ bogus-priv
 dhcp-client-update
 dhcp-boot={{ dhcp_boot }}
 {%   if ntp_servers is defined %}
-dhcp-option=option:ntp-server,{% for server in ntp_servers %}{{ server }}{% if not loop.last %},{% endif %}{% endfor %}
+dhcp-option=option:ntp-server,{% for server in ntp_servers %}{{ server }}{% if not loop.last %},{% endif %}{% endfor %}{{ '\n' }}
 {%   endif %}
 dhcp-option=option:domain-name,{{ pri_domain_name }}
 {%   if dns_search is defined %}
@@ -681,7 +681,7 @@ bogus-priv
 dhcp-boot={{ dhcp_boot }}
 dhcp-client-update
 {%   if ntp_servers is defined %}
-dhcp-option=option:ntp-server,{% for server in ntp_servers %}{{ server }}{% if not loop.last %},{% endif %}{% endfor %}
+dhcp-option=option:ntp-server,{% for server in ntp_servers %}{{ server }}{% if not loop.last %},{% endif %}{% endfor %}{{ '\n' }}
 {%   endif %}
 dhcp-option=option:domain-name,{{ pri_domain_name }}
 {%   if dns_search is defined %}
