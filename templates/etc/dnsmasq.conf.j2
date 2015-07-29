@@ -641,7 +641,6 @@ server=/{{ pri_domain_name }}/{{ pri_bind_address }}
 server={{ item }}
 {%   endfor %}
 {% endif %}
-
 {% if enable_dnsmasq_dhcp %}
 address=/{{ pri_domain_name }}/{{ pri_bind_address }}
 bind-interfaces
@@ -665,7 +664,6 @@ server=/{{ pri_domain_name }}/{{ pri_bind_address }}
 server={{ item }}
 {%   endfor %}
 {% endif %}
-
 {% if enable_tftp %}
 bind-interfaces
 bogus-priv
@@ -673,7 +671,6 @@ enable-tftp
 interface={{ pri_bind_interface }}
 tftp-root={{ tftpboot_dir }}
 {% endif %}
-
 {% if enable_dnsmasq_dhcp_tftp %}
 address=/{{ pri_domain_name }}/{{ pri_bind_address }}
 bind-interfaces
