@@ -652,7 +652,9 @@ dhcp-boot={{ dhcp_boot }}
 dhcp-option=option:ntp-server,{% for server in ntp_servers %}{{ server }}{% if not loop.last %},{% endif %}{% endfor %}
 {%   endif %}
 dhcp-option=option:domain-name,{{ pri_domain_name }}
+{%   if dns_search is defined %}
 dhcp-option=option:domain-search,{{ dns_search }}
+{%   endif %}
 {%   for item in dhcp_range %}
 dhcp-range={{ item.start }},{{ item.end }},{{ item.netmask }}
 {%   endfor %}
@@ -682,7 +684,9 @@ dhcp-client-update
 dhcp-option=option:ntp-server,{% for server in ntp_servers %}{{ server }}{% if not loop.last %},{% endif %}{% endfor %}
 {%   endif %}
 dhcp-option=option:domain-name,{{ pri_domain_name }}
+{%   if dns_search is defined %}
 dhcp-option=option:domain-search,{{ dns_search }}
+{%   endif %}
 {%   for item in dhcp_range %}
 dhcp-range={{ item.start }},{{ item.end }},{{ item.netmask }}
 {%   endfor %}
