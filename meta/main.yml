@@ -1,8 +1,8 @@
 ---
 galaxy_info:
-  author: your name
-  description: 
-  company: your company (optional)
+  author: Larry Smith Jr.
+  description: Installs dnsmasq
+  #company: your company (optional)
   # Some suggested licenses:
   # - BSD (default)
   # - MIT
@@ -14,16 +14,16 @@ galaxy_info:
   min_ansible_version: 1.2
   #
   # Below are all platforms currently available. Just uncomment
-  # the ones that apply to your role. If you don't see your 
+  # the ones that apply to your role. If you don't see your
   # platform on this list, let us know and we'll get it added!
   #
-  #platforms:
-  #- name: EL
-  #  versions:
+  platforms:
+  - name: EL
+    versions:
   #  - all
   #  - 5
   #  - 6
-  #  - 7
+    - 7
   #- name: GenericUNIX
   #  versions:
   #  - all
@@ -75,18 +75,18 @@ galaxy_info:
   #  - 9.1
   #  - 9.1
   #  - 9.2
-  #- name: Ubuntu
-  #  versions:
+  - name: Ubuntu
+    versions:
   #  - all
   #  - lucid
   #  - maverick
   #  - natty
   #  - oneiric
-  #  - precise
+    - precise
   #  - quantal
   #  - raring
   #  - saucy
-  #  - trusty
+    - trusty
   #  - utopic
   #  - vivid
   #- name: SLES
@@ -114,7 +114,7 @@ galaxy_info:
   # Below are all categories currently available. Just as with
   # the platforms above, uncomment those that apply to your role.
   #
-  #categories:
+  categories:
   #- cloud
   #- cloud:ec2
   #- cloud:gce
@@ -125,13 +125,12 @@ galaxy_info:
   #- database:sql
   #- development
   #- monitoring
-  #- networking
+  - networking
   #- packaging
-  #- system
+  - system
   #- web
 dependencies: []
   # List your role dependencies here, one per line. Only
   # dependencies available via galaxy should be listed here.
   # Be sure to remove the '[]' above if you add dependencies
   # to this list.
-  
