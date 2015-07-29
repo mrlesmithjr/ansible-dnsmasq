@@ -19,6 +19,7 @@ enable_dnsmasq_dhcp: false  #defines if DHCP services are provided by DNSMASQ
 enable_dnsmasq_dhcp_tftp: false  #defines if DHCP and TFTP services are provided by DNSMASQ
 enable_tftp: false  #defines if TFTP services are provided by DNSMASQ
 pri_bind_address: '{{ ansible_default_ipv4.address }}'
+pri_bind_interface: '{{ ansible_default_ipv4.interface }}'
 pri_domain_name: example.org
 pri_netmask_cidr: 24  #defines netmask cidr value 255.255.255.0 == 24
 pri_network: '{{ ansible_default_ipv4.network }}'
