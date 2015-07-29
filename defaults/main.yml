@@ -8,5 +8,6 @@ enable_dnsmasq_dhcp_tftp: false  #defines if DHCP and TFTP services are provided
 enable_tftp: false  #defines if TFTP services are provided by DNSMASQ
 pri_bind_address: '{{ ansible_default_ipv4.address }}'
 pri_domain_name: example.org
+pri_netmask_cidr: 24  #defines netmask cidr value 255.255.255.0 == 24
 pri_network: '{{ ansible_default_ipv4.network }}'
 sync_dnsmasq: false  #defines if DNSMASQ is synced between nodes when using GlusterFS
