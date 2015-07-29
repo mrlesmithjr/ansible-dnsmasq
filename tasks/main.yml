@@ -1,2 +1,11 @@
 ---
 # tasks file for ansible-dnsmasq
+- include: debian.yml
+  when: ansible_os_family == "Debian"
+
+- include: centos.yml
+  when: ansible_os_family == "RedHat"
+
+- include: config_dnsmasq.yml
+  tags: [config_dnsmasq]
+  when: config_dnsmasq
