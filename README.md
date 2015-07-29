@@ -18,6 +18,7 @@ dnsmasq_misc_home: []
 enable_dnsmasq_dhcp: false  #defines if DHCP services are provided by DNSMASQ
 enable_dnsmasq_dhcp_tftp: false  #defines if DHCP and TFTP services are provided by DNSMASQ
 enable_tftp: false  #defines if TFTP services are provided by DNSMASQ
+pri_domain_name: example.org
 sync_dnsmasq: false  #defines if DNSMASQ is synced between nodes when using GlusterFS
 ````
 
