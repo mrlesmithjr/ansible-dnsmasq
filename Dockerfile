@@ -1,15 +1,15 @@
 #Builds Ubuntu dnsmasq image
 
 #FROM mrlesmithjr/ansible:ubuntu-12.04
-FROM mrlesmithjr/ansible
+#FROM mrlesmithjr/ansible:ubuntu-14.04
+FROM mrlesmithjr/ubuntu-ansible
 
 MAINTAINER mrlesmithjr@gmail.com
 
 #Installs git
-RUN apt-get update && apt-get install -y \
-  git \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get update && apt-get install -y git && \
+    apt-get clean &&\
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #Clean up Ansible playbooks
 RUN rm -rf /opt/ansible-playbooks
