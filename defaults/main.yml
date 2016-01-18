@@ -12,6 +12,7 @@ dhcp_scopes:  #define dhcp scopes to be used if dhcp is enabled
 dns_search: example.org  #define your dns search here or define globally in group_vars/all
 dnsmasq_misc_backup_dir: ''  #define if using GlusterFS
 dnsmasq_misc_home: ''  #define if using GlusterFS
+dnsmasq_misc_mnt: ''  #define if using GlusterFS
 dnsmasq_nameservers:  #define your dns servers here or define globally in group_vars/all
   - 8.8.4.4
   - 8.8.8.8
