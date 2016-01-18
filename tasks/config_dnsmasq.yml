@@ -7,22 +7,22 @@
     group: root
     mode: 0644
   notify: restart dnsmasq
-  when: config_dnsmasq
 
 - name: config_dnsmasq | checking to see if /var/lib/misc has already been moved
   stat:
     path: "{{ dnsmasq_misc_backup_dir }}"
   register: dnsmasq_misc_backup_moved
   when: >
-        dnsmasq_misc_backup_dir is defined and
-        dnsmasq_misc_backup_dir != "None"
+        (dnsmasq_misc_backup_dir is defined and
+        dnsmasq_misc_backup_dir != "None") and
+        sync_dnsmasq
 
 - name: config_dnsmasq | moving existing /var/lib/misc
   command: "mv {{ dnsmasq_misc_home }} {{ dnsmasq_misc_backup_dir }}"
   when: >
-        dnsmasq_misc_backup_dir is defined and
+        (dnsmasq_misc_backup_dir is defined and
+        dnsmasq_misc_backup_dir != "None") and
         not dnsmasq_misc_backup_moved.stat.exists and
-        config_dnsmasq and
         sync_dnsmasq
 
 - name: config_dnsmasq | checking again if /var/lib/misc has already been moved
@@ -30,17 +30,18 @@
     path: "{{ dnsmasq_misc_backup_dir }}"
   register: dnsmasq_misc_backup_stat
   when: >
-        dnsmasq_misc_backup_dir is defined and
-        dnsmasq_misc_backup_dir != "None"
+        (dnsmasq_misc_backup_dir is defined and
+        dnsmasq_misc_backup_dir != "None") and
+        sync_dnsmasq
 
 - name: config_dnsmasq | touching file in dnsmasq_misc_backup_dir
   file:
     path: "{{ dnsmasq_misc_backup_dir }}/already_moved"
     state: touch
   when: >
-        dnsmasq_misc_backup_dir is defined and
+        (dnsmasq_misc_backup_dir is defined and
+        dnsmasq_misc_backup_dir != "None") and
         dnsmasq_misc_backup_stat.stat.exists and
-        config_dnsmasq and
         sync_dnsmasq
 
 - name: config_dnsmasq | mounting gluster volumes - dnsmasq_misc
@@ -56,9 +57,9 @@
       fstype: 'glusterfs'
       options: 'defaults,_netdev,backupvolfile-server={{ secondary_gfs_server }}'
   when: >
-        dnsmasq_misc_home is defined and
+        (dnsmasq_misc_home is defined and
+        dnsmasq_misc_home != "None") and
         dnsmasq_misc_backup_stat.stat.exists and
-        config_dnsmasq and
         sync_dnsmasq
 
 - name: config_dnsmasq | checking for existing dnsmasq.leases
@@ -66,24 +67,26 @@
     path: "{{ dnsmasq_misc_home }}/dnsmasq.leases"
   register: dnsmasq_misc_leases_stat
   when: >
-        dnsmasq_misc_home is defined and
-        dnsmasq_misc_home != "None"
+        (dnsmasq_misc_home is defined and
+        dnsmasq_misc_home != "None") and
+        sync_dnsmasq
 
 - name: config_dnsmasq | checking for existing dnsmasq.leases in backup
   stat:
     path: "{{ dnsmasq_misc_backup_dir }}/dnsmasq.leases"
   register: dnsmasq_misc_backup_leases_stat
   when: >
-        dnsmasq_misc_backup_dir is defined and
-        dnsmasq_misc_backup_dir != "None"
+        (dnsmasq_misc_home is defined and
+        dnsmasq_misc_home != "None") and
+        sync_dnsmasq
 
 - name: config_dnsmasq | copying existing dnsmasq.leases to new mountpoint
   command: "cp {{ dnsmasq_misc_backup_dir }}/dnsmasq.leases {{ dnsmasq_misc_home }}"
   run_once: true
   when: >
-        dnsmasq_misc_backup_dir is defined and
+        (dnsmasq_misc_backup_dir is defined and
+        dnsmasq_misc_backup_dir != "None") and
         not dnsmasq_misc_leases_stat.stat.exists and
-        config_dnsmasq and
         sync_dnsmasq and
         dnsmasq_misc_backup_leases_stat
 
