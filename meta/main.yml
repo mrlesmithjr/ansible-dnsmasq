@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Larry Smith Jr.
-  description: Installs dnsmasq
+  description: Installs and configures dnsmasq
   #company: your company (optional)
   # Some suggested licenses:
   # - BSD (default)
@@ -22,14 +22,14 @@ galaxy_info:
     versions:
   #  - all
   #  - 5
-  #  - 6
+    - 6
     - 7
   #- name: GenericUNIX
   #  versions:
   #  - all
   #  - any
-  #- name: Fedora
-  #  versions:
+  - name: Fedora
+    versions:
   #  - all
   #  - 16
   #  - 17
@@ -37,7 +37,8 @@ galaxy_info:
   #  - 19
   #  - 20
   #  - 21
-  #  - 22
+    - 22
+    - 23
   #- name: Windows
   #  versions:
   #  - all
@@ -82,13 +83,14 @@ galaxy_info:
   #  - maverick
   #  - natty
   #  - oneiric
-  #  - precise
+    - precise
   #  - quantal
   #  - raring
   #  - saucy
     - trusty
   #  - utopic
-  #  - vivid
+    - vivid
+    - wily
   #- name: SLES
   #  versions:
   #  - all
@@ -102,14 +104,14 @@ galaxy_info:
   #  versions:
   #  - all
   #  - any
-  #- name: Debian
-  #  versions:
+  - name: Debian
+    versions:
   #  - all
   #  - etch
-  #  - jessie
+    - jessie
   #  - lenny
   #  - squeeze
-  #  - wheezy
+    - wheezy
   #
   # Below are all categories currently available. Just as with
   # the platforms above, uncomment those that apply to your role.
