@@ -626,21 +626,23 @@
 #conf-file=/etc/dnsmasq.more.conf
 #conf-dir=/etc/dnsmasq.d
 
-# {{ ansible_managed }}
 #
 {% if not enable_dnsmasq_dhcp and not enable_tftp and not enable_dnsmasq_dhcp_tftp %}
-address=/{{ pri_domain_name }}/{{ pri_bind_address }}
 bind-interfaces
 bogus-priv
+{%   if dnsmasq_add_custom_domain %}
+address=/{{ pri_domain_name }}/{{ pri_bind_address }}
 domain={{ pri_domain_name }}
 local=/{{ pri_domain_name }}/
 server=/{{ pri_domain_name }}/{{ pri_bind_address }}
-{%   for item in dnsmasq_nameservers %}
+{%   endif %}
+{%   if dnsmasq_enable_forwarders %}
+{%     for item in dnsmasq_nameservers %}
 server={{ item }}
-{%   endfor %}
+{%     endfor %}
+{%   endif %}
 {% endif %}
 {% if enable_dnsmasq_dhcp %}
-address=/{{ pri_domain_name }}/{{ pri_bind_address }}
 bind-interfaces
 bogus-priv
 dhcp-client-update
@@ -655,9 +657,12 @@ dhcp-option=option:domain-search,{{ dns_search }}
 {%   for item in dhcp_scopes %}
 dhcp-range={{ item.start }},{{ item.end }},{{ item.netmask }}
 {%   endfor %}
+{%   if dnsmasq_add_custom_domain %}
+address=/{{ pri_domain_name }}/{{ pri_bind_address }}
 domain={{ pri_domain_name }}
 local=/{{ pri_domain_name }}/
 server=/{{ pri_domain_name }}/{{ pri_bind_address }}
+{%   endif %}
 {%   for item in dnsmasq_nameservers %}
 server={{ item }}
 {%   endfor %}
@@ -685,10 +690,13 @@ dhcp-option=option:domain-search,{{ dns_search }}
 {%   for item in dhcp_scopes %}
 dhcp-range={{ item.start }},{{ item.end }},{{ item.netmask }}
 {%   endfor %}
-domain={{ pri_domain_name }}
 enable-tftp
+{%   if dnsmasq_add_custom_domain %}
+address=/{{ pri_domain_name }}/{{ pri_bind_address }}
+domain={{ pri_domain_name }}
 local=/{{ pri_domain_name }}/
 server=/{{ pri_domain_name }}/{{ pri_bind_address }}
+{%   endif %}
 {%   for item in dnsmasq_nameservers %}
 server={{ item }}
 {%   endfor %}

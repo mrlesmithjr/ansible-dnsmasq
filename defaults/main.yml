@@ -10,6 +10,8 @@ dhcp_scopes:  #define dhcp scopes to be used if dhcp is enabled
     end: 192.168.2.224
     netmask: 255.255.255.0
 dns_search: example.org  #define your dns search here or define globally in group_vars/all
+dnsmasq_add_custom_domain: false  #defines if dnsmasq should be configured for internal
+dnsmasq_enable_forwarders: false  #defines if forwarders should be used
 dnsmasq_misc_backup_dir: ''  #define if using GlusterFS
 dnsmasq_misc_home: ''  #define if using GlusterFS
 dnsmasq_misc_mnt: ''  #define if using GlusterFS
