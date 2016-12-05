@@ -6,7 +6,7 @@ Installs dnsmasq http://www.thekelleys.org.uk/dnsmasq/doc.html
 Requirements
 ------------
 
-None..Unless using GlusterFS for backend syncing of DNSMASQ services..
+None
 
 Role Variables
 --------------
@@ -24,8 +24,6 @@ dhcp_scopes:  #define dhcp scopes to be used if dhcp is enabled
     end: 192.168.2.224
     netmask: 255.255.255.0
 dns_search: example.org  #define your dns search here or define globally in group_vars/all
-dnsmasq_misc_backup_dir: []  #define if using GlusterFS
-dnsmasq_misc_home: []  #define if using GlusterFS
 dnsmasq_nameservers:  #define your dns servers here or define globally in group_vars/all
   - 8.8.4.4
   - 8.8.8.8
@@ -40,7 +38,6 @@ pri_bind_interface: '{{ ansible_default_ipv4.interface }}'
 pri_domain_name: example.org
 pri_netmask_cidr: 24  #defines netmask cidr value 255.255.255.0 == 24
 pri_network: '{{ ansible_default_ipv4.network }}'
-sync_dnsmasq: false  #defines if DNSMASQ is synced between nodes when using GlusterFS
 tftpboot_dir: /var/lib/tftpboot  #Define tftpboot directory
 ````
 
