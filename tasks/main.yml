@@ -11,5 +11,5 @@
 
 - include: config_dnsmasq.yml
   tags:
-    - config_dnsmasq
-  when: config_dnsmasq
+    - dnsmasq_config
+  when: dnsmasq_config
