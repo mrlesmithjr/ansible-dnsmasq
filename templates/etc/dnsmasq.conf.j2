@@ -1,4 +1,7 @@
 port={{ dnsmasq_listen_port }}
+{% if not dnsmasq_read_etc_hosts %}
+no-hosts
+{% endif %}
 {% if not dnsmasq_read_etc_resolv_conf %}
 no-resolv
 {% endif %}
