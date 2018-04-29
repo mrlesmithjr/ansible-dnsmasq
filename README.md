@@ -2,6 +2,10 @@
 
 An [ansible] role to install/configure [dnsmasq]
 
+## Build Status
+
+[![Build Status](https://travis-ci.org/mrlesmithjr/ansible-dnsmasq.svg?branch=master)](https://travis-ci.org/mrlesmithjr/ansible-dnsmasq)
+
 ## Requirements
 
 None
