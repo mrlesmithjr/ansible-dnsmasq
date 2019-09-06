@@ -76,6 +76,9 @@ dnsmasq_dhcp_scopes:
   #   lease_time:                    24h
   #   interface:                     eth1
 
+# Disables updating resolv.conf to use 127.0.0.1 as the only nameserver
+dnsmasq_disable_lo: false
+
 # Define your dns search
 dnsmasq_dns_search: "{{ dnsmasq_pri_domain_name }}"
 

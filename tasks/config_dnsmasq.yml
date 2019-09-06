@@ -1,4 +1,15 @@
 ---
+- name: dnsmasq_config | Configuring DNSMasq Default Settings
+  template:
+    src: etc/default/dnsmasq.j2
+    dest: /etc/default/dnsmasq
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+  notify: restart dnsmasq
+  become: true
+  when: ansible_os_family == "Debian"
+
 - name: dnsmasq_config | Configuring DNSMasq
   template:
     src: etc/dnsmasq.conf.j2

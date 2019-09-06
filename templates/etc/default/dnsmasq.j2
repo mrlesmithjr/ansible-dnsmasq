@@ -1,0 +1,10 @@
+{{ ansible_managed | comment }}
+
+#DOMAIN_SUFFIX=`dnsdomainname`
+#DNSMASQ_OPTS="--conf-file=/etc/dnsmasq.alt"
+ENABLED=1
+CONFIG_DIR=/etc/dnsmasq.d,.dpkg-dist,.dpkg-old,.dpkg-new
+#IGNORE_RESOLVCONF=yes
+{% if dnsmasq_disable_lo|bool %}
+DNSMASQ_EXCEPT=lo
+{% endif %}
