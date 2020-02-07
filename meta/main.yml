@@ -24,6 +24,7 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - bionic
+        - dingo
         - precise
         - trusty
         - vivid

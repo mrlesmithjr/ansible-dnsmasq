@@ -6,3 +6,10 @@
   become: true
   register: result
   until: result is successful
+
+- name: debian | Ensuring DNSMasq Service Is Enabled And Started
+  service:
+    name: dnsmasq
+    enabled: true
+    state: started
+  become: true
