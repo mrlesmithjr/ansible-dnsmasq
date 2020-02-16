@@ -1,14 +1,11 @@
-# Role Name
+# ansible-dnsmasq
 
-An [ansible] role to install/configure [dnsmasq]
-
-## Build Status
-
-[![Build Status](https://travis-ci.org/mrlesmithjr/ansible-dnsmasq.svg?branch=master)](https://travis-ci.org/mrlesmithjr/ansible-dnsmasq)
+Ansible role to install/configure DNSMasq
 
 ## Requirements
 
-None
+For any required Ansible roles, review:
+[requirements.yml](requirements.yml)
 
 ## Role Variables
 
@@ -16,19 +13,9 @@ None
 
 ## Dependencies
 
-None
-
 ## Example Playbook
 
-```yaml
----
-- hosts: all
-  become: true
-  vars:
-  roles:
-    - role: ansible-dnsmasq
-  tasks:
-```
+[playbook.yml](playbook.yml)
 
 ## License
 
@@ -38,12 +25,6 @@ MIT
 
 Larry Smith Jr.
 
--   [@mrlesmithjr]
--   <http://everythingshouldbevirtual.com>
--   mrlesmithjr [at] gmail.com
-
-[@mrlesmithjr]: https://www.twitter.com/mrlesmithjr
-
-[ansible]: https://ansible.com
-
-[dnsmasq]: http://www.thekelleys.org.uk/dnsmasq/doc.html
+- [@mrlesmithjr](https://twitter.com/mrlesmithjr)
+- [mrlesmithjr@gmail.com](mailto:mrlesmithjr@gmail.com)
+- [http://everythingshouldbevirtual.com](http://everythingshouldbevirtual.com)
