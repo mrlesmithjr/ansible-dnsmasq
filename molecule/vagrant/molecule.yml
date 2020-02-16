@@ -24,6 +24,10 @@ provisioner:
   name: ansible
   lint:
     name: ansible-lint
+    options:
+      x:
+        - 303
+        - 503
   playbooks:
     converge: ../shared/playbook.yml
 verifier:
