@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include ansible-dnsmasq"
+      include_role:
+        name: "ansible-dnsmasq"
