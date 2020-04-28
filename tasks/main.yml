@@ -18,6 +18,6 @@
   when: dnsmasq_config
 
 - include: systemd_resolved.yml
-  when: >
-    ansible_service_mgr == "systemd" and
-    dnsmasq_systemd_resolved_disable
+  when:
+    - ansible_service_mgr == "systemd"
+    - dnsmasq_systemd_resolved_disable
