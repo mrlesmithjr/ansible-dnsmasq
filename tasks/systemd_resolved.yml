@@ -27,9 +27,9 @@
     state: absent
   become: true
   register: _dnsmasq_resolv_conf_removed
-  when: >
-    _dnsmasq_systemd_resolved_disabled['changed'] and
-    _dnsmasq_resolv_conf['stat']['islnk']
+  when:
+    - _dnsmasq_systemd_resolved_disabled['changed']
+    - _dnsmasq_resolv_conf['stat']['islnk']
 
 - name: systemd_resolved | Creating /etc/resolv.conf
   template:
@@ -41,4 +41,4 @@
   become: true
   notify:
     - restart dnsmasq
-  when: _dnsmasq_resolv_conf_removed['changed']
+  when: ansible_virtualization_type != "docker"
