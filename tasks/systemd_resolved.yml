@@ -1,9 +1,4 @@
 ---
-- name: systemd_resolved | Checking If systemd-resolved Service Is Present
-  command: systemctl status systemd-resolved.service
-  register: _dnsmasq_systemd_resolved_check
-  changed_when: false
-  failed_when: false
 
 - name: systemd_resolved | Disabling and Stopping systemd-resolved
   service:
@@ -14,7 +9,6 @@
   register: _dnsmasq_systemd_resolved_disabled
   notify:
     - restart dnsmasq
-  when: _dnsmasq_systemd_resolved_check['rc'] == 0
 
 - name: systemd_resolved | Checking If /etc/resolv.conf Exists
   stat:
