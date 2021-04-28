@@ -129,13 +129,16 @@ dnsmasq_pri_netmask_cidr: 24
 dnsmasq_pri_network: "{{ ansible_default_ipv4['network'] }}"
 
 # Defines if you want dnsmasq to read /etc/hosts
-dnsmasq_read_etc_hosts:
-  true
-  # Define if /etc/resolv.conf should be polled for changes
+dnsmasq_read_etc_hosts: true
+
+# Define if /etc/resolv.conf should be polled for changes
 dnsmasq_poll_etc_resolv_conf: true
 
 # Define if /etc/resolv.conf should be read
 dnsmasq_read_etc_resolv_conf: true
+
+# Define if dns negative cache should be disable
+dnsmasq_disabled_negcache: false
 
 # Define static addresses
 dnsmasq_static_addresses:
