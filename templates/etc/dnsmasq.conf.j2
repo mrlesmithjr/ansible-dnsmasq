@@ -8,6 +8,9 @@ no-resolv
 {% if not dnsmasq_poll_etc_resolv_conf %}
 no-poll
 {% endif %}
+{% if dnsmasq_disabled_negcache %}
+no-negcache
+{% endif %}
 {% if dnsmasq_bind_interfaces is defined and dnsmasq_bind_interfaces != [] %}
 {%   for item in dnsmasq_bind_interfaces %}
 interface={{ item }}
