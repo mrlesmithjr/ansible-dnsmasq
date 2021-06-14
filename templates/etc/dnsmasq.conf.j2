@@ -72,7 +72,8 @@ dhcp-host={{ item['mac_address']|join(',') }}{% if item['name'] is defined %},{{
 {%   endif %}
 {%   if dnsmasq_dhcp_options is defined and dnsmasq_dhcp_options != [] %}
 {%     for item in dnsmasq_dhcp_options %}
-dhcp-option=option:{{ item['option'] }},{{ item['value']|join(',') }}
+dhcp-option=option:{{ item['option'] }}{% if item['value'] is defined %},{{ item['value']|join(',') }}{% endif %}
+
 {%     endfor %}
 {%   endif %}
 {%   if dnsmasq_dhcp_scopes is defined and dnsmasq_dhcp_scopes != [] %}
