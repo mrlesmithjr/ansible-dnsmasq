@@ -1,5 +1,5 @@
 ---
-- name: systemd_resolved | Checking If systemd-resolved Service Is Present
+- name: systemd_resolved | Checking If systemd-resolved Service Is Present # noqa command-instead-of-module
   command: systemctl status systemd-resolved.service
   register: _dnsmasq_systemd_resolved_check
   changed_when: false
@@ -21,7 +21,7 @@
     path: /etc/resolv.conf
   register: _dnsmasq_resolv_conf
 
-- name: systemd_resolved | Removing Existing /etc/resolv.conf If symlink
+- name: systemd_resolved | Removing Existing /etc/resolv.conf If symlink # noqa no-handler
   file:
     path: /etc/resolv.conf
     state: absent
