@@ -33,7 +33,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Tue Apr 28 08:57:34 2020 -0400
 
     Fix /etc/resolv.conf not being configured
-    
+
     /etc/resolv.conf needs be updated when systemd-resolved is in use. It
     was only being updated when /etc/resolv.conf was a symlink.
 
@@ -114,7 +114,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Sun Feb 16 16:29:52 2020 -0500
 
     Removed old testing methods
-    
+
     - In favor of new Molecule testing, etc. The previous methods were
     removed.
 
@@ -129,7 +129,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Sun Dec 23 22:53:18 2018 -0500
 
     First commit of refactoring
-    
+
     Cleaned up code based on Ansible lint and YAML lint
     Implemented updated Travis CI testing
 
@@ -138,7 +138,7 @@ Author: Bob Vincent <pillarsdotnet@gmail.com>
 Date:   Fri Oct 12 10:40:15 2018 -0400
 
     Fix bogus-priv option.
-    
+
     The [`bogus-priv`](https://github.com/imp/dnsmasq/blob/master/man/dnsmasq.8#L308) option tells dnsmasq **not** to forward nonrouted addresses for reverse DNS resolution. Therefore, setting [`dnsmasq_forward_nonrouted_addresses`] to `true` should **suppress** this option, rather than setting it.
 
 commit 1417b4ed3f1964646de72b9a26cb4a8fe8e871c8
@@ -158,7 +158,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Sat Apr 28 19:54:30 2018 -0400
 
     Fixed install on systems running systemd-resolved
-    
+
     On newer distros that have systemd-resolved installed by default,
     DNSMasq does not appear to be functional after installing. This resolves
     that issue and ensures that DNSMasq is functional.
@@ -192,7 +192,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Wed Jun 28 22:59:16 2017 -0400
 
     Resolves #7
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit bf1c625e10eca4c33d1116222b5cb8823495c7a5
@@ -200,7 +200,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Wed Jun 28 22:58:31 2017 -0400
 
     Resolves #6
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit 3007fd93d1dad2ffd9b734a139347a3e9e521074
@@ -208,7 +208,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Sun Jun 11 11:56:53 2017 -0400
 
     Cleaned up code/vars
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit 2832e240f561394997ecb13a014453dab51648ed
@@ -216,7 +216,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Mon Apr 24 10:59:21 2017 -0400
 
     Added become: true on handlers
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit 7d744b26281514b26aec5bc273e106c946d151be
@@ -224,7 +224,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Mon Apr 24 10:52:27 2017 -0400
 
     Added become: true on required tasks and updated Travis tests
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit bc54d8b2e4f51b5dbb979d9eb964634134df5709
@@ -232,7 +232,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Mon Apr 24 10:52:13 2017 -0400
 
     Removed Docker build
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit d7227aa5034b58806bc57c9f921dc56b2cf81ff5
@@ -240,7 +240,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Sun Feb 26 20:57:06 2017 -0500
 
     Cleaned up vars
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit 0b27990051f281a0791a2c5b831291810ba89401
@@ -248,7 +248,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Wed Jan 18 22:13:38 2017 -0500
 
     Updated Galaxy info
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit c1a5613626a818d35f33798af2d5a476ea244f1c
@@ -256,7 +256,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Sat Jan 14 15:15:41 2017 -0500
 
     Added Travis CI testing
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit f472ccb98500c796442de82bc6ff9d80eab52a45
@@ -264,7 +264,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Sat Jan 14 15:10:36 2017 -0500
 
     Complete rewrite of configuration options
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit 736496387acb510447113c5ba204604e7604cbe0
@@ -272,7 +272,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Sun Dec 4 21:53:00 2016 -0500
 
     Addresses issue #2
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit 33f82644a5fed9baa31223c487e3f147826d3927
@@ -280,7 +280,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Sun Dec 4 21:37:45 2016 -0500
 
     Addresses issue #1
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit bd2b22e5de81f5c91c7ac753526145887b338d4b
@@ -288,7 +288,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.coml>
 Date:   Sat Mar 26 00:55:34 2016 -0400
 
     Cleaned up and added options to add forwarders and etc.
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.coml>
 
 commit 0775d3f7928baca87fd424841153d083d20f8ab8
@@ -296,7 +296,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.coml>
 Date:   Tue Mar 8 22:58:37 2016 -0500
 
     Added openSUSE support
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.coml>
 
 commit 61567b62e2a8e4cd81fc1dbf463e8d3642a75bfb
@@ -304,7 +304,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.coml>
 Date:   Mon Mar 7 10:25:10 2016 -0500
 
     Added CentOS, Fedora and Debian support
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.coml>
 
 commit 8f4abeca63cecfec3aed7f4fc920773fc7eaad07
@@ -312,7 +312,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Mon Jan 18 12:28:26 2016 -0500
 
     Changed to not pull from dev branch
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit 2e793cdce3f57609db36a3268696ff7f99dff926
@@ -320,11 +320,11 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Mon Jan 18 12:21:27 2016 -0500
 
     Moved sync_dnsmasq tasks
-    
+
     out of main config_dnsmasq task. GlusterFS usage
     will more than likely be moved out of this role
     in the future.
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit 4159fce4968529659fc10aa43535da0b54386280
@@ -332,7 +332,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Mon Jan 18 12:12:33 2016 -0500
 
     Added missing var
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit 0e677db3af458481438ba865a6c13f36d1cf2e25
@@ -340,7 +340,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Mon Jan 18 12:03:11 2016 -0500
 
     Cleaned up conditionals and defined missing vars
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit 9e3787e4bfbb70d25f7e60bd703386abdfa55310
@@ -348,11 +348,11 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Mon Jan 18 11:43:25 2016 -0500
 
     modified provision script
-    
+
     Now using git clone to pull down dev branch
     instead of ansible-galaxy to install. Not sure how
     'to specify a branch with ansible-galaxy.
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit 3d147b9aaac3cea92a8abdb6531966206aa34bdb
@@ -360,9 +360,9 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Mon Jan 18 01:14:31 2016 -0500
 
     Cleaned up tasks,
-    
+
     Added Vagrant build info, Updated readme with valid info
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit dacf8c8b49355b0f69c50c0f0bf5a4846f11acbd
@@ -370,7 +370,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Mon Jan 18 00:48:57 2016 -0500
 
     Updated tags formatting
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit 023c45a6f87fb7621a53f1577971e8035f322b1e
@@ -378,7 +378,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Sat Jan 2 13:10:09 2016 -0500
 
     updated Docker build
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit 9e8437210e87f85852f803be2afd830ee1672790
@@ -386,7 +386,7 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Sat Jan 2 01:41:37 2016 -0500
 
     Updated Docker Image to use
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit 15a9c8e2750e42f444f359946ebd4197bc85684f
@@ -394,9 +394,9 @@ Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Mon Dec 21 13:27:29 2015 -0500
 
     Added Dockerfile
-    
+
     Setting up Docker Hub automated builds
-    
+
     Signed-off-by: Larry Smith Jr <mrlesmithjr@gmail.com>
 
 commit 6023e2bf2921992391d963dee839dfa5a40ae49e
