@@ -5,5 +5,5 @@
     dnsmasq_systemd_resolved_disable: false
   tasks:
     - name: Include ansible-dnsmasq
-      include_role:
+      ansible.builtin.include_role:
         name: ansible-dnsmasq

@@ -1,6 +1,6 @@
 ---
 - name: dnsmasq_config | Configuring DNSMasq Default Settings
-  template:
+  ansible.builtin.template:
     src: etc/default/dnsmasq.j2
     dest: /etc/default/dnsmasq
     owner: root
@@ -11,19 +11,20 @@
   when: ansible_os_family == "Debian"
 
 - name: dnsmasq_config | Configuring DNSMasq
-  template:
+  ansible.builtin.template:
     src: etc/dnsmasq.conf.j2
     dest: /etc/dnsmasq.conf
     owner: root
     group: root
-    mode: 0644
+    mode: u=rw,g=r,o=r
   notify: restart dnsmasq
   become: true
 
 - name: dnsmasq_config | Ensuring {{ dnsmasq_tftpboot_dir }} Exists
-  file:
+  ansible.builtin.file:
     path: "{{ dnsmasq_tftpboot_dir }}"
     state: directory
+    mode: u=rw,g=r,o=r
   become: true
   when: >
     dnsmasq_enable_tftp is defined and

@@ -1,6 +1,6 @@
 ---
 - name: debian | Installing DNSMasq
-  apt:
+  ansible.builtin.apt:
     name: dnsmasq
     state: present
   become: true

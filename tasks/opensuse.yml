@@ -8,7 +8,7 @@
   until: result is successful
 
 - name: opensuse | Ensuring DNSMasq Service Is Enabled and Started
-  service:
+  ansible.builtin.service:
     name: dnsmasq
     state: started
     enabled: true
