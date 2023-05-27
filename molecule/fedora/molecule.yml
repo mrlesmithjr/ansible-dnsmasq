@@ -22,6 +22,9 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      remote_tmp: /tmp
   playbooks:
     converge: ../shared/converge.yml
     prepare: ../shared/prepare.yml

@@ -24,6 +24,9 @@ platforms:
     # groups: []
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      remote_tmp: /tmp
   playbooks:
     converge: ../shared/converge.yml
     prepare: ../shared/prepare.yml
