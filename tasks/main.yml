@@ -1,23 +1,29 @@
 ---
 # tasks file for ansible-dnsmasq
-- include: alpine.yml
+- name: Alpine related tasks
+  ansible.builtin.include_tasks: alpine.yml
   when: ansible_os_family == "Alpine"
 
-- include: debian.yml
+- name: Debian related tasks
+  ansible.builtin.include_tasks: debian.yml
   when: ansible_os_family == "Debian"
 
-- include: redhat.yml
+- name: RHEL related tasks
+  ansible.builtin.include_tasks: redhat.yml
   when: ansible_os_family == "RedHat"
 
-- include: opensuse.yml
+- name: openSUSE related tasks
+  ansible.builtin.include_tasks: opensuse.yml
   when: ansible_os_family == "openSUSE Leap"
 
-- include: config_dnsmasq.yml
+- name: Configure DNSMasq
+  ansible.builtin.include_tasks: config_dnsmasq.yml
   tags:
     - dnsmasq_config
   when: dnsmasq_config
 
-- include: systemd_resolved.yml
+- name: Manage systemd DNS
+  ansible.builtin.include_tasks: systemd_resolved.yml
   when:
     - ansible_service_mgr == "systemd"
     - dnsmasq_systemd_resolved_disable
