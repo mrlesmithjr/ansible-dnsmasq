@@ -8,10 +8,6 @@ Ansible role to install/configure DNSMasq
 
 ![Molecule Test](https://github.com/mrlesmithjr/ansible-dnsmasq/workflows/Molecule%20Test/badge.svg)
 
-### Travis CI
-
-[![Build Status](https://travis-ci.org/mrlesmithjr/ansible-dnsmasq.svg?branch=master)](https://travis-ci.org/mrlesmithjr/ansible-dnsmasq)
-
 ## Requirements
 
 For any required Ansible roles, review:
