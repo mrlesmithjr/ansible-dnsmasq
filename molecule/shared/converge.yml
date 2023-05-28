@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    dnsmasq_systemd_resolved_disable: false
+  tasks:
+    - name: Include ansible-dnsmasq
+      ansible.builtin.include_role:
+        name: ansible-dnsmasq
