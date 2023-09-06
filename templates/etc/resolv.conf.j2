@@ -1,3 +1,4 @@
 {{ ansible_managed|comment }}
 search {{ dnsmasq_dns_search }}
-nameserver 127.0.0.1:{{ dnsmasq_listen_port }}
+nameserver {{ dnsmasq_resolvconf_nameserver }}
+dnsmasq_resolvconf_nameserver: "127.0.0.1:{{ dnsmasq_listen_port }}"
