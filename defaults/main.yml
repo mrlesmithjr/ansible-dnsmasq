@@ -104,7 +104,7 @@ dnsmasq_forward_nonrouted_addresses: false
 # Set to 0 to disable DNS
 dnsmasq_listen_port: 53
 
-# value for nameserver in /etc/resolv.conf some tools do not like the :port argument 
+# value for nameserver in /etc/resolv.conf some tools do not like the :port argument
 # may ovveride such as 127.0.0.1
 dnsmasq_resolvconf_nameserver: "127.0.0.1:{{ dnsmasq_listen_port }}"
 
