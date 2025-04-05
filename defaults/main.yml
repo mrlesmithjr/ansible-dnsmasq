@@ -106,7 +106,7 @@ dnsmasq_listen_port: 53
 
 # value for nameserver in /etc/resolv.conf some tools do not like the :port argument
 # may ovveride such as 127.0.0.1
-dnsmasq_resolvconf_nameserver: "127.0.0.1:{{ dnsmasq_listen_port }}"
+dnsmasq_resolvconf_nameserver: "127.0.0.1"
 
 # Define your dns servers
 dnsmasq_nameservers:
