@@ -42,3 +42,32 @@
   notify:
     - restart dnsmasq
   when: ansible_virtualization_type != "docker"
+
+- name: systemd | Check if running Ubuntu 24.04+
+  ansible.builtin.set_fact:
+    is_ubuntu_24_or_later: "{{ ansible_distribution == 'Ubuntu' and ansible_distribution_version is version('24.04', '>=') }}"
+
+- name: systemd | Configure dnsmasq service for Ubuntu 24.04+
+  block:
+    - name: systemd | Ensure dnsmasq drop-in directory exists
+      ansible.builtin.file:
+        path: /etc/systemd/system/dnsmasq.service.d
+        state: directory
+        mode: '0755'
+        owner: root
+        group: root
+
+    - name: systemd | Disable resolvconf integration for dnsmasq
+      ansible.builtin.copy:
+        dest: /etc/systemd/system/dnsmasq.service.d/override.conf
+        content: |
+          [Service]
+          ExecStartPost=
+          ExecStop=
+        owner: root
+        group: root
+        mode: '0644'
+      notify:
+        - reload systemd
+        - restart dnsmasq
+  when: is_ubuntu_24_or_later
