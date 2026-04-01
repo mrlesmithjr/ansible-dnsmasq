@@ -14,7 +14,7 @@ repos:
         args: [--branch, develop, --branch, master, --branch, main]
       - id: trailing-whitespace
   - repo: https://github.com/ansible/ansible-lint
-    rev: v26.3.0
+    rev: v24.12.2
     hooks:
       - id: ansible-lint
   - repo: https://github.com/psf/black
