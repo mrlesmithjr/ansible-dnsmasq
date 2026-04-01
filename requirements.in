@@ -3,6 +3,7 @@ ansible
 ansible-lint
 docker
 mkdocs
-molecule[docker]
+molecule
+molecule-plugins[docker]
 pip-tools
 yamllint
