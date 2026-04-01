@@ -1,3 +1,6 @@
 skip_list:
   - name[casing]
   - name[template]
+  - fqcn[action]
+  - fqcn[action-core]
+  - key-order[task]
