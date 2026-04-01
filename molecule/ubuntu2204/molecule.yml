@@ -24,6 +24,9 @@ platforms:
     # groups: []
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      roles_path: ${MOLECULE_PROJECT_DIRECTORY}/..
   playbooks:
     converge: ../shared/converge.yml
     prepare: ../shared/prepare.yml
