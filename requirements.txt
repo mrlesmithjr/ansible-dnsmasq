@@ -92,7 +92,7 @@ mkdocs==1.6.1
     # via -r requirements.in
 mkdocs-get-deps==0.2.2
     # via mkdocs
-molecule==26.3.0
+molecule==26.4.0
     # via
     #   -r requirements.in
     #   molecule-plugins
