@@ -10,7 +10,7 @@ ansible-compat==26.3.0
     # via
     #   ansible-lint
     #   molecule
-ansible-core==2.19.8
+ansible-core==2.19.9
     # via
     #   ansible
     #   ansible-compat
@@ -26,23 +26,23 @@ black==26.3.1
     # via ansible-lint
 bracex==2.6
     # via wcmatch
-build==1.4.2
+build==1.5.0
     # via pip-tools
-certifi==2026.2.25
+certifi==2026.4.22
     # via requests
 cffi==2.0.0
     # via
     #   ansible-lint
     #   cryptography
-charset-normalizer==3.4.6
+charset-normalizer==3.4.7
     # via requests
-click==8.3.1
+click==8.3.3
     # via
     #   black
     #   mkdocs
     #   molecule
     #   pip-tools
-cryptography==46.0.6
+cryptography==47.0.0
     # via
     #   ansible-core
     #   ansible-lint
@@ -56,11 +56,11 @@ docker==7.1.0
     #   molecule-plugins
 enrich==1.2.7
     # via molecule
-filelock==3.25.2
+filelock==3.29.0
     # via ansible-lint
 ghp-import==2.1.0
     # via mkdocs
-idna==3.11
+idna==3.13
     # via requests
 jinja2==3.1.6
     # via
@@ -92,7 +92,7 @@ mkdocs==1.6.1
     # via -r requirements.in
 mkdocs-get-deps==0.2.2
     # via mkdocs
-molecule==26.3.0
+molecule==26.4.0
     # via
     #   -r requirements.in
     #   molecule-plugins
@@ -100,7 +100,7 @@ molecule-plugins[docker]==25.8.12
     # via -r requirements.in
 mypy-extensions==1.1.0
     # via black
-packaging==26.0
+packaging==26.2
     # via
     #   ansible-compat
     #   ansible-core
@@ -118,7 +118,7 @@ pathspec==1.0.4
     #   yamllint
 pip-tools==7.5.3
     # via -r requirements.in
-platformdirs==4.9.4
+platformdirs==4.9.6
     # via
     #   black
     #   mkdocs-get-deps
@@ -159,7 +159,7 @@ requests==2.33.1
     #   molecule-plugins
 resolvelib==1.2.1
     # via ansible-core
-rich==14.3.3
+rich==15.0.0
     # via
     #   enrich
     #   molecule
@@ -191,7 +191,7 @@ wcmatch==10.1
     # via
     #   ansible-lint
     #   molecule
-wheel==0.46.3
+wheel==0.47.0
     # via pip-tools
 yamllint==1.38.0
     # via
